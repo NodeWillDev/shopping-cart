@@ -9,15 +9,16 @@ export const Container = styled.div`
   margin: auto;
   background-color: rgba(255, 255, 255, .15);
   display: flex;
-  flex-direction: column;
+  flex-direction: column;  
 `
 
 export const Header = styled.div`
-  padding: 5px;
+  padding: 5px;  
+  padding-bottom: 20px;
+  border-bottom: 1px solid white;
 `
 
 export const Page = styled.div`
   margin-top: 20px;
-  display: flex;
-  justify-content: center;
+  display: flex;  
 `

@@ -8,7 +8,7 @@ export default createGlobalStyle`
   }
 
   body {
-    background-color: #1f1e1d;
+    background: linear-gradient(180deg, black, teal);
     font-size: 16px;
     color: #e6e3e1;
     font-family: 'Montserrat', sans-serif;

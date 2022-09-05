@@ -6,6 +6,7 @@ export const Container = styled.div`
   align-items: center;
   width: 100%;  
   position: relative;
+  
 `
 
 export const Nav = styled.div`
