@@ -18,7 +18,8 @@ export const Title = styled.div`
 
 export const Courses = styled.div`
   display: flex;      
-  justify-content: space-between;
+  justify-content: center;
+  gap: 40px;
   align-content: center;
   flex-wrap: wrap;  
   width: 80%;

@@ -5,7 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;  
   text-align: center;
-  width: 280px;
+  width: 300px;
   box-shadow: 5px 15px 7px rgba(0, 0, 0, .7);
   border-radius: 5px;  
   margin-top: 50px;
@@ -14,10 +14,13 @@ export const Container = styled.div`
 
 export const Title = styled.h2`
   letter-spacing: 2px;
+  padding: 20px;
+  font-weight: bold;
+  color: black;
 `
 
 export const CourseImage = styled.div`
-  margin-top: 15px;    
+  margin-top: 15px;      
 `
 
 export const Date = styled.div`
@@ -39,6 +42,8 @@ export const Description = styled.div`
     list-style: none;  
 
     > li {
+      color: black;
+      font-weight: 500;
       padding: 10px;
       margin-top: 2.5px;
     }
@@ -66,5 +71,5 @@ export const Features = styled.div`
 
 export const Discount = styled.s`
   font-size: .6em;
-  color: white;
+  color: black;
 `

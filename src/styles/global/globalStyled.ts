@@ -8,9 +8,9 @@ export default createGlobalStyle`
   }
 
   body {
-    background: linear-gradient(180deg, black, teal);
+    background: #bdbbbb;
     font-size: 16px;
-    color: #e6e3e1;
+    color: #303030;
     font-family: 'Montserrat', sans-serif;
   }
 `
