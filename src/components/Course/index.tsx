@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ICourse from "../../context/interfaces/ICourses";
 import Button from "../Button";
-
+import CartHover from "../Button/hover/carthover";
 import * as S from "./styled";
 
 interface ICourseComponent extends Omit<ICourse, "id"> {
@@ -10,6 +10,18 @@ interface ICourseComponent extends Omit<ICourse, "id"> {
 }
 
 const Course = ({ price, title, discount, description, image }: ICourseComponent) => {
+
+  const handleClick = (): void => {
+    const course = {
+      price,
+      title,
+      description
+    };
+
+    console.log(course)
+
+  }
+
   return <>
     <S.Container>
       <S.Title>{title}</S.Title>
@@ -27,7 +39,10 @@ const Course = ({ price, title, discount, description, image }: ICourseComponent
           </ul>
         </S.Description>
         <S.Features>
-          <Button>
+          <Button
+            onClick={handleClick}
+            children_hover={(<CartHover />)}
+          >
             {price.toLocaleString('pt-br', {
               style: 'currency',
               currency: 'BRL'

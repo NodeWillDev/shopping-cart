@@ -66,7 +66,11 @@ export const Description = styled.div`
 `
 
 export const Features = styled.div`
-  margin-left: 5px;
+  display: flex;  
+  margin-left: 5px;  
+  width: 100%;
+  height: 85px;
+  justify-content: center;
 `
 
 export const Discount = styled.s`

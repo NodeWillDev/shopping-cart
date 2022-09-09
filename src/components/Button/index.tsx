@@ -1,14 +1,29 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import * as S from "./styled";
 
-interface IButton {  
+interface IButton {
   children: ReactNode
+  onClick: () => void,
+  children_hover?: ReactNode
 }
 
-const Button = ({ children }: IButton) => {
+const Button = ({ children, children_hover, onClick }: IButton) => {
+
+  const [hover, setHover] = useState<boolean>(false);
+
   return <>
-    <S.Container>
-      {children}
+    <S.Container
+      onClick={onClick}
+      hover_show={hover}
+      onMouseEnter={() => children_hover && setHover(true)}
+      onMouseLeave={() => children_hover && setHover(false)}
+    >
+      <S.Children>
+        {children}
+      </S.Children>
+      <S.ChildrenHover>
+        {children_hover}
+      </S.ChildrenHover>
     </S.Container>
   </>
 }
