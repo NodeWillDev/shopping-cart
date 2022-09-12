@@ -1,16 +1,20 @@
 import { useReducer } from "react"
 import IActions from "./interfaces/IActions"
-import ICourse from "./interfaces/ICourses"
+import ICourse from "./interfaces/ICourse"
 
-const CartReducer = () => useReducer((course: ICourse[], action: IActions) => {
+const CartReducer = () => useReducer((course: Omit<ICourse, "image">[], action: IActions) => {
 
-  if (action.type == 'addItemCart')
-    course.push(action.payload);
+  switch (action.type) {
 
-  if (action.type == 'removeItemCart')
-    course.filter(date => date.id == action.payload.id);
+    case 'addItemCart':
+      return [...course, ...[action.payload]];
 
-  return course;
-}, {} as ICourse[]);
+    case 'removeItemCart':
+      return [...course.filter((item => item.id !== action.payload.id))];
+
+    default:
+      return course;
+  }
+}, []);
 
 export default CartReducer;

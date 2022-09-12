@@ -1,7 +1,7 @@
 import TypeActions from "../types/TypeActions";
-import ICourse from "./ICourses";
+import ICourse from "./ICourse";
 
 export default interface IActions {
   type: TypeActions
-  payload: ICourse
+  payload: Omit<ICourse, "image">
 }

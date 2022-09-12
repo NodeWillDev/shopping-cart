@@ -1,7 +1,7 @@
 import * as S from "./styled";
 import { BsCartPlus } from "react-icons/bs";
 
-const CartHover = () => {
+const CartHoverAdd = () => {
   return <>
     <S.Container>
       <BsCartPlus />
@@ -9,4 +9,4 @@ const CartHover = () => {
   </>
 }
 
-export default CartHover;
+export default CartHoverAdd;

@@ -9,7 +9,7 @@ export const Container = styled.div`
 
   :hover  {
     transform: scale(1.2);
-    color: #fcfcfc;
+    color: #232423;
     opacity: .1;
     font-weight: normal;
   }
@@ -17,7 +17,7 @@ export const Container = styled.div`
 
 export const ItemLenght = styled.div`
   position: absolute;
-  right: 2.5px;
-  bottom: 1.5px;
+  right: 0;
+  bottom: 0;
   font-weight: bold;
 `

@@ -1,9 +1,9 @@
 import { createContext } from "react"
 import IActions from "./interfaces/IActions"
-import ICourse from "./interfaces/ICourses"
+import ICourse from "./interfaces/ICourse"
 
 interface ICartContext {
-  date: ICourse[],
+  date: Omit<ICourse, "image">[],
   dispatch: (action: IActions) => void 
 }
 

@@ -1,25 +1,41 @@
 import Image from "next/image";
-import ICourse from "../../context/interfaces/ICourses";
+import useCart from "../../context/hook/useCart";
+import ICourse from "../../context/interfaces/ICourse";
 import Button from "../Button";
-import CartHover from "../Button/hover/carthover";
+import CartHoverAdd from "../Button/hover/carthoveradd";
+import CartHoverRemove from "../Button/hover/carthoverremove";
 import * as S from "./styled";
 
-interface ICourseComponent extends Omit<ICourse, "id"> {
+interface ICourseComponent extends ICourse {
   description?: string[],
-
 }
 
-const Course = ({ price, title, discount, description, image }: ICourseComponent) => {
+const Course = ({ price, title, discount, description, image, id }: ICourseComponent) => {
 
-  const handleClick = (): void => {
-    const course = {
-      price,
-      title,
-      description
-    };
+  const { date, dispatch } = useCart();
 
-    console.log(course)
+  const course = {
+    id,
+    price,
+    title,
+    description,
+  };
 
+  const isExists = date.some(data => data.id === id)
+
+  const handleClick = () => {
+    if (!isExists) {
+      dispatch({
+        type: 'addItemCart',
+        payload: course
+      });
+    } else {
+      dispatch({
+        type: 'removeItemCart',
+        payload: course
+      });
+    }
+    console.log(date)
   }
 
   return <>
@@ -41,7 +57,10 @@ const Course = ({ price, title, discount, description, image }: ICourseComponent
         <S.Features>
           <Button
             onClick={handleClick}
-            children_hover={(<CartHover />)}
+            children_hover={
+              isExists ?
+                (< CartHoverRemove />) : (<CartHoverAdd />)
+            }
           >
             {price.toLocaleString('pt-br', {
               style: 'currency',

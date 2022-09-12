@@ -5,7 +5,7 @@ export const Container = styled.div`
   transition: .5s;
 
   :hover {
-    color: #2dad4f;
+    color: #fa3741;
     opacity: .5;
   }
 `
