@@ -4,6 +4,7 @@ CREATE TABLE `courses` (
     `title` VARCHAR(191) NOT NULL,
     `price` DOUBLE NOT NULL,
     `image` VARCHAR(191) NOT NULL,
+    `description` TEXT NULL,
     `discount` DOUBLE NULL,
 
     PRIMARY KEY (`id`)

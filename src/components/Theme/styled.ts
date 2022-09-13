@@ -6,8 +6,8 @@ export const Container = styled.div`
   max-width: 1320px;
   padding: 20px;
   position: relative;
-  margin: auto;
-  background-color: #c4c4c4;
+  margin: auto;  
+  background-color: #303030;
   display: flex;
   flex-direction: column;  
 `

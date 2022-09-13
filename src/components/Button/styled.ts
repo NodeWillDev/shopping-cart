@@ -18,7 +18,7 @@ export const ChildrenHover = styled.div`
 export const Container = styled.button<IStyled>`  
   background: none;
   border: none;  
-  color: #3b3b3b;
+  color: #fcfcfc;
   font-size: 1.2em;  
   cursor: pointer;
   letter-spacing: 1px;

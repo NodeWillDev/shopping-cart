@@ -12,9 +12,10 @@ datasource db {
 
 model Course {
   id Int @id @default(autoincrement())
-  title String  
+  title String      
   price Float
   image String
+  description String? @db.Text
   discount Float?
 
   @@map("courses")

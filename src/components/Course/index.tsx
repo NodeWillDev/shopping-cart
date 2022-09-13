@@ -6,11 +6,7 @@ import CartHoverAdd from "../Button/hover/carthoveradd";
 import CartHoverRemove from "../Button/hover/carthoverremove";
 import * as S from "./styled";
 
-interface ICourseComponent extends ICourse {
-  description?: string[],
-}
-
-const Course = ({ price, title, discount, description, image, id }: ICourseComponent) => {
+const Course = ({ price, title, discount, description, image, id }: ICourse) => {
 
   const { date, dispatch } = useCart();
 
@@ -38,21 +34,20 @@ const Course = ({ price, title, discount, description, image, id }: ICourseCompo
     console.log(date)
   }
 
+  console.log(description?.split(' ').length)
+
   return <>
-    <S.Container>
+    <S.Container exists={isExists} >
       <S.Title>{title}</S.Title>
       <S.CourseImage>
         <Image src={image} width={150} height={150} />
       </S.CourseImage>
       <S.Date>
-        <S.Description>
-          <ul>
-            {description?.map((data, index) => (
-              <li style={{
-                backgroundColor: (index % 2) == 0 ? 'rgba(255, 255, 255, .3)' : 'rgba(0, 0, 0, .3)'
-              }} key={index}>{data}</li>
-            ))}
-          </ul>
+        <S.Description lenght={description?.split(' ').length}  >
+          <h3>SEE DESCRIPTION</h3>
+          <S.DescriptionContents>
+            <p>{description}</p>
+          </S.DescriptionContents>
         </S.Description>
         <S.Features>
           <Button

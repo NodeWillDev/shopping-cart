@@ -3,5 +3,6 @@ export default interface ICourse {
   title: string
   price: number
   image: string
+  description?: string
   discount?: number
 }

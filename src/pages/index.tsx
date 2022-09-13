@@ -23,9 +23,10 @@ export default function Home(props: IHome) {
               <Course
                 id={data.id}
                 discount={data.discount}
-                image={`/images/${data.image}.png`}
+                image={`${data.image}`}
                 price={data.price}
                 title={data.title}
+                description={data.description}
                 key={data.id}
               />
             ))
