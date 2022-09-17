@@ -1,14 +1,15 @@
-import { GetStaticProps } from "next";
+import { GetStaticPaths, GetStaticProps } from "next";
+import Prisma from "../../lib/prisma";
 import Course from "../components/Course";
 import Theme from "../components/Theme";
 import ICourse from "../context/interfaces/ICourse";
-import * as S from "../styles/Home/styled"
+import * as S from "../styles/Home/styled";
 
 interface IHome {
   courses: ICourse[]
 }
 
-export default function Home(props: IHome) {
+const Home = ({ courses }: IHome) => {
 
   return (
     <Theme>
@@ -19,7 +20,7 @@ export default function Home(props: IHome) {
           </S.Title>
 
           {
-            props.courses.map(data => (
+            courses.map(data => (
               <Course
                 id={data.id}
                 discount={data.discount}
@@ -37,16 +38,16 @@ export default function Home(props: IHome) {
   )
 }
 
-
 export const getStaticProps: GetStaticProps = async () => {
-
-  const response = await fetch(`http://localhost:3000/api/courses/all-courses`);
-  const courses = await (await response.json()).courses;
+  
+  const courses = await Prisma.course.findMany();
 
   return {
     props: {
       courses
     },
-    revalidate: 2
+    revalidate: 60
   }
 }
+
+export default Home;

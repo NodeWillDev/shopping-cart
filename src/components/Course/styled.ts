@@ -1,16 +1,11 @@
 import styled from "styled-components";
 
-interface IStyled {
-  lenght?: number,
-  exists?: boolean
-}
-
-export const Container = styled.div<IStyled>`
+export const Container = styled.div<{ exists: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: center;  
   text-align: center;
-  width: 300px;
+  width: 250px;
   background-color: ${props => props.exists ? `rgba(25, 189, 90, .25)` : `rgba(0, 0, 0, .25)`};
   box-shadow: 5px 15px 15px rgba(0, 0, 0, .4);
   border-radius: 5px;  
@@ -59,7 +54,7 @@ export const DescriptionContents = styled.div`
   padding: 5px;
 `
 
-export const Description = styled.div<IStyled>`
+export const Description = styled.div<{ lenght?: number }>`
   position: relative;
   width: 100%;
   transition: .4s;
@@ -67,7 +62,7 @@ export const Description = styled.div<IStyled>`
   padding: 7px;
   overflow: hidden;
   overflow-y: hidden;
-  max-height: 250px;
+  max-height: 150px;
 
   > h3 {
     color: #949494;
@@ -75,8 +70,8 @@ export const Description = styled.div<IStyled>`
   }
 
   &:hover {
-    height: ${props => props.lenght}px;    
-    overflow-y: scroll;
+    height: ${props => props.lenght}px;        
+    overflow-y: ${props => props.lenght ? "auto" : "hidden"};
   }
 
   ::-webkit-scrollbar {

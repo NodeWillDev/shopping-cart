@@ -42,7 +42,7 @@ export const ItemsContainer = styled.div`
 
   > button {
     position: absolute;
-    right: 6px;
+    right: 9.5px;
     border: none;
     background: none;
     color: #d11111;

@@ -31,10 +31,7 @@ const Course = ({ price, title, discount, description, image, id }: ICourse) => 
         payload: course
       });
     }
-    console.log(date)
   }
-
-  console.log(description?.split(' ').length)
 
   return <>
     <S.Container exists={isExists} >
@@ -43,7 +40,7 @@ const Course = ({ price, title, discount, description, image, id }: ICourse) => 
         <Image src={image} width={150} height={150} />
       </S.CourseImage>
       <S.Date>
-        <S.Description lenght={description?.split(' ').length}  >
+        <S.Description lenght={description?.split(' ').length} >
           <h3>SEE DESCRIPTION</h3>
           <S.DescriptionContents>
             <p>{description}</p>

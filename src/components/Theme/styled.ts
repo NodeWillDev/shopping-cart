@@ -22,4 +22,5 @@ export const Header = styled.div`
 export const Page = styled.div`
   margin-top: 20px;
   display: flex;  
+  flex-direction: row;
 `
