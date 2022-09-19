@@ -6,7 +6,7 @@
 
 This is a project made in NEXT JS with TypeScript.
 
-It boils down to just a `shopping cart system`, I made it just for display and example for my [GitHub.](https://github.com/NodeWillDev/NodeWillDev)
+It boils down to just a `shopping cart` system, I made it just for display and example for my [GitHub.](https://github.com/NodeWillDev/NodeWillDev)
 
 <br>
 
