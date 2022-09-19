@@ -15,7 +15,8 @@ It boils down to just a `shopping cart system`, I made it just for display and e
 > **.env**
 
 ```dosini
-  DATABASE_URL="service://user:password@localhost:3306/database"
-  ###Example
-  DATABASE_URL="mysql://root:root@localhost:3306/test"
+  DATABASE_URL="service://user:password@localhost:3306/database"  
 ```
+## Example
+
+> **DATABASE_URL="mysql://root:root@localhost:3306/test"**
