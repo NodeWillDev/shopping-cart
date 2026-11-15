@@ -1,5 +1,7 @@
 # 👨‍💻 **shopping-cart**
 
+bash grab.sh  # fetch runtime deps
+
 <br>
 
 # How to use
